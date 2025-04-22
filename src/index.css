@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+body {
+  font-family: 'Tiro Devanagari Marathi', serif;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
 @keyframes gradient-shift {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
