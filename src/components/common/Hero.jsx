@@ -19,7 +19,7 @@ function Hero() {
           <img
             src={logo}
             alt="शिक्षण विभाग लोगो"
-            className="relative z-10 w-full h-auto object-contain animate-float"
+            className="relative z-10 w-full h-auto object-contain animate-float rounded-4xl"
           />
           <div className="absolute -top-4 -left-4 w-12 md:w-16 h-12 md:h-16 rounded-full bg-yellow-400/20 animate-float-delay"></div>
           <div className="absolute -bottom-4 -right-4 w-14 md:w-20 h-14 md:h-20 rounded-full bg-blue-300/20 animate-float-delay-2"></div>
