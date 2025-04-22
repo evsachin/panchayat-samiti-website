@@ -1,17 +1,40 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const dropdownRef = useRef();
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
   const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
 
+  // Close mobile menu on resize
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setMenuOpen(false);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Close dropdown on outside click
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+        setDropdownOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   return (
     <nav className="bg-blue-600 text-white p-4 flex items-center justify-between relative z-50 shadow-md">
-      {/* Logo / Home link */}
+      {/* Logo */}
       <Link
         to="/"
         className="text-xl font-bold font-heading hover:text-yellow-300 transition-colors"
@@ -29,24 +52,24 @@ function Navbar() {
 
       {/* Desktop Menu */}
       <div className="hidden md:flex gap-8 items-center">
-        <Link
-          to="/amachyavishayi"
-          className="hover:text-yellow-300 transition-colors"
-        >
+        <Link to="/shalamahiti" className="nav-link">
+          शाळा माहिती
+        </Link>
+        <Link to="/shikshakmahiti" className="nav-link">
+          शिक्षक माहिती
+        </Link>
+        <Link to="/amachyavishayi" className="nav-link">
           आमच्याविषयी
         </Link>
-        <Link
-          to="/asthapana"
-          className="hover:text-yellow-300 transition-colors"
-        >
+        <Link to="/asthapana" className="nav-link">
           आस्थापना
         </Link>
 
         {/* Dropdown */}
-        <div className="relative group">
+        <div className="relative group" ref={dropdownRef}>
           <button
             onClick={toggleDropdown}
-            className="flex items-center gap-1 hover:text-yellow-300 transition-colors focus:outline-none"
+            className="flex items-center gap-1 nav-link"
           >
             स्पर्धा परीक्षा{" "}
             <ChevronDown
@@ -56,47 +79,54 @@ function Navbar() {
               }`}
             />
           </button>
-          {dropdownOpen && (
-            <div className="absolute top-8 left-0 bg-blue-700 shadow-lg rounded p-2 flex flex-col gap-2 w-48 z-20 border border-blue-500">
-              <Link
-                to="/navoday"
-                onClick={() => setDropdownOpen(false)}
-                className="hover:bg-blue-600 p-2 rounded hover:text-yellow-300 transition-colors"
-              >
-                नवोदय परीक्षा
-              </Link>
-              <Link
-                to="/mission-arambh"
-                onClick={() => setDropdownOpen(false)}
-                className="hover:bg-blue-600 p-2 rounded hover:text-yellow-300 transition-colors"
-              >
-                मिशन आरंभ
-              </Link>
-              <Link
-                to="/shishyavrutti"
-                onClick={() => setDropdownOpen(false)}
-                className="hover:bg-blue-600 p-2 rounded hover:text-yellow-300 transition-colors"
-              >
-                शिष्यवृत्ती
-              </Link>
-            </div>
-          )}
+          <div
+            className={`absolute top-8 left-0 bg-blue-700 shadow-lg rounded p-2 flex flex-col gap-2 w-48 z-20 border border-blue-500 transition-all duration-300 ${
+              dropdownOpen
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 -translate-y-4 pointer-events-none"
+            }`}
+          >
+            <Link
+              to="/navoday"
+              onClick={() => setDropdownOpen(false)}
+              className="dropdown-link"
+            >
+              नवोदय परीक्षा
+            </Link>
+            <Link
+              to="/mission-arambh"
+              onClick={() => setDropdownOpen(false)}
+              className="dropdown-link"
+            >
+              मिशन आरंभ
+            </Link>
+            <Link
+              to="/shishyavrutti"
+              onClick={() => setDropdownOpen(false)}
+              className="dropdown-link"
+            >
+              शिष्यवृत्ती
+            </Link>
+          </div>
         </div>
 
-        <Link to="/mdm" className="hover:text-yellow-300 transition-colors">
+        <Link to="/upakram" className="nav-link">
+          उपक्रम
+        </Link>
+        <Link to="/missionapulki" className="nav-link">
+          मिशन आपुलकी
+        </Link>
+        <Link to="/mdm" className="nav-link">
           MDM
         </Link>
-        <Link to="/rte" className="hover:text-yellow-300 transition-colors">
+        <Link to="/rte" className="nav-link">
           RTE प्रवेश
         </Link>
-        <Link
-          to="/sarvasamaveshak"
-          className="hover:text-yellow-300 transition-colors"
-        >
+        <Link to="/sarvasamaveshak" className="nav-link">
           सर्व समावेशक शिक्षण
         </Link>
-        <Link to="/upakram" className="hover:text-yellow-300 transition-colors">
-          उपक्रम
+        <Link to="/video" className="nav-link">
+          व्हिडीओ
         </Link>
       </div>
 
@@ -108,26 +138,24 @@ function Navbar() {
             : "opacity-0 -translate-y-6 pointer-events-none"
         }`}
       >
-        <Link
-          to="/amachyavishayi"
-          onClick={toggleMenu}
-          className="hover:text-yellow-300 transition-colors p-2 hover:bg-blue-600 rounded"
-        >
+        <Link to="/shalamahiti" onClick={toggleMenu} className="mobile-link">
+          शाळा माहिती
+        </Link>
+        <Link to="/shikshakmahiti" onClick={toggleMenu} className="mobile-link">
+          शिक्षक माहिती
+        </Link>
+        <Link to="/amachyavishayi" onClick={toggleMenu} className="mobile-link">
           आमच्याविषयी
         </Link>
-        <Link
-          to="/asthapana"
-          onClick={toggleMenu}
-          className="hover:text-yellow-300 transition-colors p-2 hover:bg-blue-600 rounded"
-        >
+        <Link to="/asthapana" onClick={toggleMenu} className="mobile-link">
           आस्थापना
         </Link>
 
-        {/* Mobile Dropdown Toggle */}
+        {/* Mobile Dropdown */}
         <div className="flex flex-col">
           <button
             onClick={toggleDropdown}
-            className="flex items-center gap-1 hover:text-yellow-300 transition-colors p-2 focus:outline-none text-left"
+            className="flex items-center gap-1 mobile-link text-left"
           >
             स्पर्धा परीक्षा{" "}
             <ChevronDown
@@ -137,69 +165,67 @@ function Navbar() {
               }`}
             />
           </button>
-          {dropdownOpen && (
-            <div className="ml-4 mt-1 flex flex-col gap-2 border-l-2 border-blue-500 pl-2">
-              <Link
-                to="/navoday"
-                onClick={() => {
-                  toggleMenu();
-                  setDropdownOpen(false);
-                }}
-                className="hover:text-yellow-300 transition-colors p-2 hover:bg-blue-600 rounded"
-              >
-                नवोदय परीक्षा
-              </Link>
-              <Link
-                to="/mission-arambh"
-                onClick={() => {
-                  toggleMenu();
-                  setDropdownOpen(false);
-                }}
-                className="hover:text-yellow-300 transition-colors p-2 hover:bg-blue-600 rounded"
-              >
-                मिशन आरंभ
-              </Link>
-              <Link
-                to="/shishyavrutti"
-                onClick={() => {
-                  toggleMenu();
-                  setDropdownOpen(false);
-                }}
-                className="hover:text-yellow-300 transition-colors p-2 hover:bg-blue-600 rounded"
-              >
-                शिष्यवृत्ती
-              </Link>
-            </div>
-          )}
+          <div
+            className={`ml-4 mt-1 flex flex-col gap-2 border-l-2 border-blue-500 pl-2 transition-all duration-300 ${
+              dropdownOpen
+                ? "opacity-100 max-h-96"
+                : "opacity-0 max-h-0 overflow-hidden"
+            }`}
+          >
+            <Link
+              to="/navoday"
+              onClick={() => {
+                toggleMenu();
+                setDropdownOpen(false);
+              }}
+              className="mobile-link"
+            >
+              नवोदय परीक्षा
+            </Link>
+            <Link
+              to="/mission-arambh"
+              onClick={() => {
+                toggleMenu();
+                setDropdownOpen(false);
+              }}
+              className="mobile-link"
+            >
+              मिशन आरंभ
+            </Link>
+            <Link
+              to="/shishyavrutti"
+              onClick={() => {
+                toggleMenu();
+                setDropdownOpen(false);
+              }}
+              className="mobile-link"
+            >
+              शिष्यवृत्ती
+            </Link>
+          </div>
         </div>
 
-        <Link
-          to="/mdm"
-          onClick={toggleMenu}
-          className="hover:text-yellow-300 transition-colors p-2 hover:bg-blue-600 rounded"
-        >
+        <Link to="/upakram" onClick={toggleMenu} className="mobile-link">
+          उपक्रम
+        </Link>
+        <Link to="/missionapulki" onClick={toggleMenu} className="mobile-link">
+          मिशन आपुलकी
+        </Link>
+        <Link to="/mdm" onClick={toggleMenu} className="mobile-link">
           MDM
         </Link>
-        <Link
-          to="/rte"
-          onClick={toggleMenu}
-          className="hover:text-yellow-300 transition-colors p-2 hover:bg-blue-600 rounded"
-        >
+        <Link to="/rte" onClick={toggleMenu} className="mobile-link">
           RTE प्रवेश
         </Link>
         <Link
           to="/sarvasamaveshak"
           onClick={toggleMenu}
-          className="hover:text-yellow-300 transition-colors p-2 hover:bg-blue-600 rounded"
+          className="mobile-link"
         >
           सर्व समावेशक शिक्षण
         </Link>
-        <Link
-          to="/upakram"
-          onClick={toggleMenu}
-          className="hover:text-yellow-300 transition-colors p-2 hover:bg-blue-600 rounded"
-        >
-          उपक्रम
+        <Link to="/video" onClick={toggleMenu} className="mobile-link">
+          व्हिडीओ
         </Link>
       </div>
     </nav>

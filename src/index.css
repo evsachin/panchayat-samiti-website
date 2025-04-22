@@ -56,3 +56,15 @@
 .animate-pulse-slow {
   animation: pulse-slow 8s ease-in-out infinite;
 }
+
+.nav-link {
+  @apply hover:text-yellow-300 transition-colors;
+}
+
+.dropdown-link {
+  @apply hover:bg-blue-600 p-2 rounded hover:text-yellow-300 transition-colors;
+}
+
+.mobile-link {
+  @apply hover:text-yellow-300 transition-colors p-2 hover:bg-blue-600 rounded;
+}

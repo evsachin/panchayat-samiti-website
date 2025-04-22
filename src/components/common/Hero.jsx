@@ -1,4 +1,4 @@
-import logo from "../../assets/images/logo.jpg";
+import logo1 from "../../assets/images/logo1.png";
 
 function Hero() {
   return (
@@ -12,26 +12,29 @@ function Hero() {
       {/* Animated Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-blue-500 to-purple-600 opacity-80 animate-gradient-shift"></div>
 
-      {/* Logo illustration */}
-      <div className="w-64 md:w-64 lg:w-80 xl:w-96 relative mt-8 md:mt-0">
-        <div className="relative">
-          <div className="absolute inset-0 rounded-full bg-white/10 backdrop-blur-sm border-2 border-white/30 animate-pulse-slow"></div>
-          <img
-            src={logo}
-            alt="शिक्षण विभाग लोगो"
-            className="relative z-10 w-full h-auto object-contain animate-float rounded-4xl"
-          />
-          <div className="absolute -top-4 -left-4 w-12 md:w-16 h-12 md:h-16 rounded-full bg-yellow-400/20 animate-float-delay"></div>
-          <div className="absolute -bottom-4 -right-4 w-14 md:w-20 h-14 md:h-20 rounded-full bg-blue-300/20 animate-float-delay-2"></div>
-        </div>
-      </div>
       {/* Content container */}
-      <div className="relative z-10 w-full max-w-6xl px-4 flex flex-col md:flex-row items-center justify-between py-12">
+      <div className="relative z-10 w-full max-w-6xl px-4 flex flex-col md:flex-row items-center justify-between py-12 gap-8">
+        {/* Logo illustration */}
+        <div className="w-40 sm:w-56 md:w-64 lg:w-80 xl:w-96 relative flex-shrink-0">
+          <div className="relative">
+            <div className="absolute inset-0 rounded-full bg-white/10 backdrop-blur-sm border-2 border-white/30 animate-pulse-slow"></div>
+            <img
+              src={logo1}
+              alt="शिक्षण विभाग लोगो"
+              className="relative z-10 w-full h-auto object-contain animate-float rounded-4xl"
+            />
+            <div className="absolute -top-4 -left-4 w-12 md:w-16 h-12 md:h-16 rounded-full bg-yellow-400/20 animate-float-delay"></div>
+            <div className="absolute -bottom-4 -right-4 w-14 md:w-20 h-14 md:h-20 rounded-full bg-blue-300/20 animate-float-delay-2"></div>
+          </div>
+        </div>
+
         {/* Text content */}
         <div className="p-6 md:p-10 rounded-xl text-center md:text-left max-w-2xl backdrop-blur-sm bg-white/10 border border-white/20 shadow-2xl">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-heading tracking-tight leading-tight">
-            पारनेर पंचायत समिती <span className="block">शिक्षण विभाग</span>
+            <span className="block">शिक्षण विभाग</span>पारनेर पंचायत समिती
           </h1>
+
+          <h1>ता.पारनेर जि. अहिल्यानगर</h1>
 
           <div className="w-24 h-1.5 bg-yellow-400 mx-auto md:mx-0 mb-8 rounded-full"></div>
 

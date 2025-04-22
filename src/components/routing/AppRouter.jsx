@@ -13,6 +13,7 @@ import SarvaSamaveshakShikshan from "../../pages/SarvaSamaveshakShikshan";
 import Upakram from "../../pages/Upakram";
 import Hero from "../common/Hero";
 import ShishyavruttiPariksha from "../../pages/ShishyavruttiPariksha";
+import Video from "../../pages/Video";
 
 export default function AppRouter() {
   return (
@@ -30,6 +31,8 @@ export default function AppRouter() {
         <Route path="rte" element={<RTEPravesh />} />
         <Route path="sarvasamaveshak" element={<SarvaSamaveshakShikshan />} />
         <Route path="upakram" element={<Upakram />} />
+        <Route path="video" element={<Video />} />
+        <Route path="missionapulki" element={<Video />} />
       </Route>
     </Routes>
   );
