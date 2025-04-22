@@ -14,6 +14,8 @@ import Upakram from "../../pages/Upakram";
 import Hero from "../common/Hero";
 import ShishyavruttiPariksha from "../../pages/ShishyavruttiPariksha";
 import Video from "../../pages/Video";
+import Shikshakmahiti from "../../pages/Shikshakmahiti";
+import Shalamahiti from "../../pages/Shalamahiti";
 
 export default function AppRouter() {
   return (
@@ -33,6 +35,8 @@ export default function AppRouter() {
         <Route path="upakram" element={<Upakram />} />
         <Route path="video" element={<Video />} />
         <Route path="missionapulki" element={<Video />} />
+        <Route path="shalamahiti" element={<Shalamahiti />} />
+        <Route path="shikshakmahiti" element={<Shikshakmahiti />} />
       </Route>
     </Routes>
   );

@@ -15,7 +15,7 @@ function Hero() {
       {/* Content container */}
       <div className="relative z-10 w-full max-w-6xl px-4 flex flex-col md:flex-row items-center justify-between py-12 gap-8">
         {/* Logo illustration */}
-        <div className="w-40 sm:w-56 md:w-64 lg:w-80 xl:w-96 relative flex-shrink-0">
+        <div className="w-40 sm:w-60 md:w-64 lg:w-80 xl:w-96 relative flex-shrink-0">
           <div className="relative">
             <div className="absolute inset-0 rounded-full bg-white/10 backdrop-blur-sm border-2 border-white/30 animate-pulse-slow"></div>
             <img
