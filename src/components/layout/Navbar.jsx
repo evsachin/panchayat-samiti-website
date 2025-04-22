@@ -7,9 +7,14 @@ function Navbar() {
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
+  console.log("Navbar rendered!");
+
   return (
-    <nav className="bg-primary text-white p-4 flex items-center justify-between">
-      <h1 className="text-xl font-bold font-heading">शिक्षण विभाग</h1>
+    <nav className="bg-blue-500 text-white p-4 flex items-center justify-between relative z-20">
+      {/* Logo / Home link */}
+      <Link to="/" className="text-xl font-bold font-heading">
+        शिक्षण विभाग
+      </Link>
 
       {/* Hamburger */}
       <button onClick={toggleMenu} className="md:hidden">
