@@ -52,14 +52,14 @@ function Navbar() {
 
       {/* Desktop Menu */}
       <div className="hidden md:flex gap-8 items-center">
+        <Link to="/amachyavishayi" className="nav-link">
+          आमच्याविषयी
+        </Link>
         <Link to="/shalamahiti" className="nav-link">
           शाळा माहिती
         </Link>
         <Link to="/shikshakmahiti" className="nav-link">
           शिक्षक माहिती
-        </Link>
-        <Link to="/amachyavishayi" className="nav-link">
-          आमच्याविषयी
         </Link>
         <Link to="/asthapana" className="nav-link">
           आस्थापना
@@ -138,14 +138,14 @@ function Navbar() {
             : "opacity-0 -translate-y-6 pointer-events-none"
         }`}
       >
+        <Link to="/amachyavishayi" onClick={toggleMenu} className="mobile-link">
+          आमच्याविषयी
+        </Link>
         <Link to="/shalamahiti" onClick={toggleMenu} className="mobile-link">
           शाळा माहिती
         </Link>
         <Link to="/shikshakmahiti" onClick={toggleMenu} className="mobile-link">
           शिक्षक माहिती
-        </Link>
-        <Link to="/amachyavishayi" onClick={toggleMenu} className="mobile-link">
-          आमच्याविषयी
         </Link>
         <Link to="/asthapana" onClick={toggleMenu} className="mobile-link">
           आस्थापना

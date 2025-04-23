@@ -1,7 +1,9 @@
 import logo1 from "../../assets/images/logo1.png";
+import Margdarshak from "../../pages/Margdarshak";
 
 function Hero() {
   return (
+    <>
     <section
       className="relative pt-20 md:pt-0 min-h-screen bg-cover bg-center flex flex-col items-center justify-center text-white"
       style={{
@@ -79,6 +81,8 @@ function Hero() {
         </svg>
       </div>
     </section>
+    <Margdarshak/>
+    </>
   );
 }
 
