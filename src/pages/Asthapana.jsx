@@ -11,8 +11,8 @@ export default function Asthapana() {
       image: seema, // replace with actual image URLs
     },
     {
-      name: "श्री. राजेश पाटील",
-      position: "उपगटशिक्षणाधिकारी",
+      name: "श्री. दयानंद पवार",
+      position: "गटविकास अधिकारी",
       office: "पंचायत समिती पारनेर",
       image: bheem, // replace with actual image URLs
     },

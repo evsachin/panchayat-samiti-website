@@ -123,7 +123,7 @@ function Navbar() {
           RTE प्रवेश
         </Link>
         <Link to="/sarvasamaveshak" className="nav-link">
-          सर्व समावेशक शिक्षण
+          समावेशीत शिक्षण
         </Link>
         <Link to="/video" className="nav-link">
           व्हिडीओ
