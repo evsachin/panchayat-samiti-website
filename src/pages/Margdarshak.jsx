@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import seema from "../assets/images/seema.png";
 import bheem from "../assets/images/bheem.jpeg";
 
@@ -8,31 +9,46 @@ export default function Margdarshak() {
       name: "श्रीम. सीमा राणे",
       position: "गटशिक्षणाधिकारी",
       office: "पंचायत समिती पारनेर",
-      image: seema, // replace with actual image URLs
+      image: seema,
     },
     {
       name: "श्री. दयानंद पवार",
       position: "गटविकास अधिकारी",
       office: "पंचायत समिती पारनेर",
-      image: bheem, // replace with actual image URLs
+      image: bheem,
     },
   ];
 
   return (
-    <div className="p-6">
-      <h1 className="text-4xl font-bold mb-6 text-center text-blue-700">
+    <motion.div
+      className="p-6"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+    >
+      <motion.h1
+        className="text-4xl font-bold mb-6 text-center text-blue-700"
+        initial={{ y: -20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6 }}
+      >
         मार्गदर्शक
-      </h1>
+      </motion.h1>
+
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
         {officers.map((officer, index) => (
-          <div
+          <motion.div
             key={index}
-            className="bg-white shadow-xl rounded-lg overflow-hidden transition-transform hover:scale-105 border-0"
+            className="bg-white shadow-2xl hover:shadow-blue-300 rounded-2xl overflow-hidden transition-all duration-300 hover:scale-105 border"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: index * 0.2, duration: 0.6 }}
           >
             <img
               src={officer.image}
               alt={officer.name}
-              className="w-4/4 h-100 object-scale-down"
+              className="w-full h-96 object-cover"
             />
             <div className="p-4 text-center">
               <h2 className="text-xl font-semibold text-gray-800 mb-2">
@@ -43,9 +59,9 @@ export default function Margdarshak() {
               </p>
               <p className="text-gray-600 text-xl mt-1">{officer.office}</p>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 }
