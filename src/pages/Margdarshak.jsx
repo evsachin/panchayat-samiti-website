@@ -40,10 +40,10 @@ export default function Margdarshak() {
           <motion.div
             key={index}
             className="bg-white shadow-2xl hover:shadow-blue-300 rounded-2xl overflow-hidden transition-all duration-300 hover:scale-105 border"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.2, duration: 0.6 }}
+            initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ delay: index * 0.2, duration: 0.6, ease: "easeOut" }}
           >
             <img
               src={officer.image}
