@@ -48,7 +48,7 @@ export default function Margdarshak() {
             <img
               src={officer.image}
               alt={officer.name}
-              className="w-full h-115 object-fill border-4 rounded-2xl"
+              className="w-full h-115 object-fill border-4 rounded-2xl p-4"
             />
             <div className="p-4 text-center">
               <h2 className="text-xl font-semibold text-gray-800 mb-2">
