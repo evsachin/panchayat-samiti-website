@@ -39,16 +39,16 @@ export default function Margdarshak() {
         {officers.map((officer, index) => (
           <motion.div
             key={index}
-            className="bg-white shadow-2xl hover:shadow-blue-300 rounded-2xl overflow-hidden transition-all duration-300 hover:scale-105 border"
+            className="bg-white shadow-2xl hover:shadow-blue-300  overflow-hidden transition-all duration-300 hover:scale-105 lg:px-8"
             initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
-            transition={{ delay: index * 0.2, duration: 0.6, ease: "easeOut" }}
+            transition={{ delay: index * 0.2, duration: 0.3, ease: "easeOut" }}
           >
             <img
               src={officer.image}
               alt={officer.name}
-              className="w-full h-96 object-cover"
+              className="w-full h-115 object-fill border-4 rounded-2xl"
             />
             <div className="p-4 text-center">
               <h2 className="text-xl font-semibold text-gray-800 mb-2">
