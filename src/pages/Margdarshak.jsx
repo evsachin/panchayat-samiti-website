@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import seema from "../assets/images/seema.png";
-import bheem from "../assets/images/bheem.jpeg";
+import bheem from "../assets/images/bheem.png";
 
 export default function Margdarshak() {
   const officers = [
@@ -21,7 +21,7 @@ export default function Margdarshak() {
 
   return (
     <motion.div
-      className="p-6"
+      className="p-6 bg-blue-300"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
@@ -39,7 +39,7 @@ export default function Margdarshak() {
         {officers.map((officer, index) => (
           <motion.div
             key={index}
-            className="bg-white shadow-2xl hover:shadow-blue-300  overflow-hidden transition-all duration-300 hover:scale-105 lg:mx-8 p-4 rounded-2xl"
+            className="bg-white/70 shadow-xl hover:shadow-blue-300 overflow-hidden transition-all duration-300 hover:scale-105 lg:mx-8 p-4 rounded-2xl backdrop-blur-md"
             initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
@@ -48,7 +48,7 @@ export default function Margdarshak() {
             <img
               src={officer.image}
               alt={officer.name}
-              className="w-full h-100 object-fill border-4 rounded-2xl"
+              className="w-full h-100 object-fill border-4 rounded-2xl border-black-200"
             />
             <div className="p-4 text-center">
               <h2 className="text-xl font-semibold text-gray-800 mb-2">
