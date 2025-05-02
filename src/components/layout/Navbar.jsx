@@ -335,7 +335,7 @@ function Navbar() {
         >
           समावेशीत शिक्षण
         </Link>
-        <Link to="/samagraanudan" className="nav-link">
+        <Link to="/samagraanudan" onClick={toggleMenu} className="mobile-link">
           समग्र अनुदान
         </Link>
         <Link to="/video" onClick={toggleMenu} className="mobile-link">
