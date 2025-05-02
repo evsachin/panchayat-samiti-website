@@ -12,7 +12,7 @@ export default function SarvaSamaveshakShikshan() {
               rel="noopener noreferrer"
               className="text-xl font-semibold hover:underline"
             >
-              सर्व समावेशक शिक्षण
+              समावेशीत शिक्षण
             </a>
           </li>
         </ul>
