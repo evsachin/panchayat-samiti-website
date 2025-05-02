@@ -20,6 +20,7 @@ import ZPSchools from "../../pages/ZPSchools";
 import PrivateSchools from "../../pages/PrivateSchools";
 import RTS from "../../pages/RTS";
 import SamagraAnudan from "../../pages/SamagraAnudan";
+import Missionapulki from "../../pages/Missionapulki";
 
 export default function AppRouter() {
   return (
@@ -38,7 +39,7 @@ export default function AppRouter() {
         <Route path="sarvasamaveshak" element={<SarvaSamaveshakShikshan />} />
         <Route path="upakram" element={<Upakram />} />
         <Route path="video" element={<Video />} />
-        <Route path="missionapulki" element={<Video />} />
+        <Route path="missionapulki" element={<Missionapulki />} />
         <Route path="shalamahiti" element={<Shalamahiti />} />
         <Route path="shikshakmahiti" element={<Shikshakmahiti />} />
         <Route path="zp-school" element={<ZPSchools />} />
