@@ -13,7 +13,6 @@ import SarvaSamaveshakShikshan from "../../pages/SarvaSamaveshakShikshan";
 import Upakram from "../../pages/Upakram";
 import Hero from "../common/Hero";
 import ShishyavruttiPariksha from "../../pages/ShishyavruttiPariksha";
-import Video from "../../pages/Video";
 import Shikshakmahiti from "../../pages/Shikshakmahiti";
 import Shalamahiti from "../../pages/Shalamahiti";
 import ZPSchools from "../../pages/ZPSchools";
@@ -21,6 +20,7 @@ import PrivateSchools from "../../pages/PrivateSchools";
 import RTS from "../../pages/RTS";
 import SamagraAnudan from "../../pages/SamagraAnudan";
 import Missionapulki from "../../pages/Missionapulki";
+import Videos from "../../pages/Videos";
 
 export default function AppRouter() {
   return (
@@ -38,7 +38,7 @@ export default function AppRouter() {
         <Route path="rte" element={<RTEPravesh />} />
         <Route path="sarvasamaveshak" element={<SarvaSamaveshakShikshan />} />
         <Route path="upakram" element={<Upakram />} />
-        <Route path="video" element={<Video />} />
+        <Route path="video" element={<Videos />} />
         <Route path="missionapulki" element={<Missionapulki />} />
         <Route path="shalamahiti" element={<Shalamahiti />} />
         <Route path="shikshakmahiti" element={<Shikshakmahiti />} />

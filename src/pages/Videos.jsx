@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Video() {
+export default function Videos() {
   return (
     <div className="bg-gray-100 min-h-screen p-4">
       <div className="bg-white p-6 rounded-lg shadow-md space-y-8 max-w-4xl mx-auto">
