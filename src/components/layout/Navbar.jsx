@@ -4,11 +4,22 @@ import { Menu, X, ChevronDown } from "lucide-react";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-  const dropdownRef = useRef();
+  const [dropdownOpen, setDropdownOpen] = useState({
+    spardha: false,
+    shala: false,
+  });
+
+  const dropdownRefs = {
+    spardha: useRef(),
+    shala: useRef(),
+  };
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
-  const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
+  const toggleDropdown = (name) =>
+    setDropdownOpen((prev) => ({
+      ...prev,
+      [name]: !prev[name],
+    }));
 
   // Close mobile menu on resize
   useEffect(() => {
@@ -21,12 +32,14 @@ function Navbar() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Close dropdown on outside click
+  // Close dropdowns on outside click
   useEffect(() => {
     const handleClickOutside = (e) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
-        setDropdownOpen(false);
-      }
+      Object.entries(dropdownRefs).forEach(([key, ref]) => {
+        if (ref.current && !ref.current.contains(e.target)) {
+          setDropdownOpen((prev) => ({ ...prev, [key]: false }));
+        }
+      });
     };
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
@@ -34,7 +47,6 @@ function Navbar() {
 
   return (
     <nav className="bg-blue-600 text-white p-4 flex items-center justify-between relative z-50 shadow-md">
-      {/* Logo */}
       <Link
         to="/"
         className="text-xl font-bold font-heading hover:text-yellow-300 transition-colors"
@@ -55,9 +67,49 @@ function Navbar() {
         <Link to="/amachyavishayi" className="nav-link">
           आमच्याविषयी
         </Link>
-        <Link to="/shalamahiti" className="nav-link">
-          शाळा माहिती
-        </Link>
+
+        {/* शाळा माहिती Dropdown */}
+        <div className="relative group" ref={dropdownRefs.shala}>
+          <button
+            onClick={() => toggleDropdown("shala")}
+            className="flex items-center gap-1 nav-link"
+          >
+            शाळा माहिती{" "}
+            <ChevronDown
+              size={18}
+              className={`transition-transform ${
+                dropdownOpen.shala ? "rotate-180" : ""
+              }`}
+            />
+          </button>
+          <div
+            className={`absolute top-8 left-0 bg-blue-700 shadow-lg rounded p-2 flex flex-col gap-2 w-48 z-20 border border-blue-500 transition-all duration-300 ${
+              dropdownOpen.shala
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 -translate-y-4 pointer-events-none"
+            }`}
+          >
+            <Link
+              to="/zp-school"
+              onClick={() =>
+                setDropdownOpen((prev) => ({ ...prev, shala: false }))
+              }
+              className="dropdown-link"
+            >
+              ZP शाळा
+            </Link>
+            <Link
+              to="/private-school"
+              onClick={() =>
+                setDropdownOpen((prev) => ({ ...prev, shala: false }))
+              }
+              className="dropdown-link"
+            >
+              खाजगी शाळा
+            </Link>
+          </div>
+        </div>
+
         <Link to="/shikshakmahiti" className="nav-link">
           शिक्षक माहिती
         </Link>
@@ -65,44 +117,50 @@ function Navbar() {
           आस्थापना
         </Link>
 
-        {/* Dropdown */}
-        <div className="relative group" ref={dropdownRef}>
+        {/* स्पर्धा परीक्षा Dropdown */}
+        <div className="relative group" ref={dropdownRefs.spardha}>
           <button
-            onClick={toggleDropdown}
+            onClick={() => toggleDropdown("spardha")}
             className="flex items-center gap-1 nav-link"
           >
             स्पर्धा परीक्षा{" "}
             <ChevronDown
               size={18}
               className={`transition-transform ${
-                dropdownOpen ? "rotate-180" : ""
+                dropdownOpen.spardha ? "rotate-180" : ""
               }`}
             />
           </button>
           <div
             className={`absolute top-8 left-0 bg-blue-700 shadow-lg rounded p-2 flex flex-col gap-2 w-48 z-20 border border-blue-500 transition-all duration-300 ${
-              dropdownOpen
+              dropdownOpen.spardha
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 -translate-y-4 pointer-events-none"
             }`}
           >
             <Link
               to="/navoday"
-              onClick={() => setDropdownOpen(false)}
+              onClick={() =>
+                setDropdownOpen((prev) => ({ ...prev, spardha: false }))
+              }
               className="dropdown-link"
             >
               नवोदय परीक्षा
             </Link>
             <Link
               to="/mission-arambh"
-              onClick={() => setDropdownOpen(false)}
+              onClick={() =>
+                setDropdownOpen((prev) => ({ ...prev, spardha: false }))
+              }
               className="dropdown-link"
             >
               मिशन आरंभ
             </Link>
             <Link
               to="/shishyavrutti"
-              onClick={() => setDropdownOpen(false)}
+              onClick={() =>
+                setDropdownOpen((prev) => ({ ...prev, spardha: false }))
+              }
               className="dropdown-link"
             >
               शिष्यवृत्ती
@@ -119,11 +177,18 @@ function Navbar() {
         <Link to="/mdm" className="nav-link">
           MDM
         </Link>
+        {/* New RTS Tab */}
+        <Link to="/rts" className="nav-link">
+          RTS
+        </Link>
         <Link to="/rte" className="nav-link">
           RTE प्रवेश
         </Link>
         <Link to="/sarvasamaveshak" className="nav-link">
           समावेशीत शिक्षण
+        </Link>
+        <Link to="/samagraanudan" className="nav-link">
+          समग्र अनुदान
         </Link>
         <Link to="/video" className="nav-link">
           व्हिडीओ
@@ -141,9 +206,51 @@ function Navbar() {
         <Link to="/amachyavishayi" onClick={toggleMenu} className="mobile-link">
           आमच्याविषयी
         </Link>
-        <Link to="/shalamahiti" onClick={toggleMenu} className="mobile-link">
-          शाळा माहिती
-        </Link>
+
+        {/* शाळा माहिती Dropdown Mobile */}
+        <div className="flex flex-col">
+          <button
+            onClick={() => toggleDropdown("shala")}
+            className="flex items-center gap-1 mobile-link text-left"
+          >
+            शाळा माहिती{" "}
+            <ChevronDown
+              size={18}
+              className={`transition-transform ${
+                dropdownOpen.shala ? "rotate-180" : ""
+              }`}
+            />
+          </button>
+          <div
+            className={`ml-4 mt-1 flex flex-col gap-2 border-l-2 border-blue-500 pl-2 transition-all duration-300 ${
+              dropdownOpen.shala
+                ? "opacity-100 max-h-96"
+                : "opacity-0 max-h-0 overflow-hidden"
+            }`}
+          >
+            <Link
+              to="/zp-school"
+              onClick={() => {
+                toggleMenu();
+                setDropdownOpen((prev) => ({ ...prev, shala: false }));
+              }}
+              className="mobile-link"
+            >
+              ZP शाळा
+            </Link>
+            <Link
+              to="/private-school"
+              onClick={() => {
+                toggleMenu();
+                setDropdownOpen((prev) => ({ ...prev, shala: false }));
+              }}
+              className="mobile-link"
+            >
+              खाजगी शाळा
+            </Link>
+          </div>
+        </div>
+
         <Link to="/shikshakmahiti" onClick={toggleMenu} className="mobile-link">
           शिक्षक माहिती
         </Link>
@@ -151,23 +258,23 @@ function Navbar() {
           आस्थापना
         </Link>
 
-        {/* Mobile Dropdown */}
+        {/* स्पर्धा परीक्षा Dropdown Mobile */}
         <div className="flex flex-col">
           <button
-            onClick={toggleDropdown}
+            onClick={() => toggleDropdown("spardha")}
             className="flex items-center gap-1 mobile-link text-left"
           >
             स्पर्धा परीक्षा{" "}
             <ChevronDown
               size={18}
               className={`transition-transform ${
-                dropdownOpen ? "rotate-180" : ""
+                dropdownOpen.spardha ? "rotate-180" : ""
               }`}
             />
           </button>
           <div
             className={`ml-4 mt-1 flex flex-col gap-2 border-l-2 border-blue-500 pl-2 transition-all duration-300 ${
-              dropdownOpen
+              dropdownOpen.spardha
                 ? "opacity-100 max-h-96"
                 : "opacity-0 max-h-0 overflow-hidden"
             }`}
@@ -176,7 +283,7 @@ function Navbar() {
               to="/navoday"
               onClick={() => {
                 toggleMenu();
-                setDropdownOpen(false);
+                setDropdownOpen((prev) => ({ ...prev, spardha: false }));
               }}
               className="mobile-link"
             >
@@ -186,7 +293,7 @@ function Navbar() {
               to="/mission-arambh"
               onClick={() => {
                 toggleMenu();
-                setDropdownOpen(false);
+                setDropdownOpen((prev) => ({ ...prev, spardha: false }));
               }}
               className="mobile-link"
             >
@@ -196,7 +303,7 @@ function Navbar() {
               to="/shishyavrutti"
               onClick={() => {
                 toggleMenu();
-                setDropdownOpen(false);
+                setDropdownOpen((prev) => ({ ...prev, spardha: false }));
               }}
               className="mobile-link"
             >
@@ -217,12 +324,19 @@ function Navbar() {
         <Link to="/rte" onClick={toggleMenu} className="mobile-link">
           RTE प्रवेश
         </Link>
+        {/* New RTS Tab Mobile */}
+        <Link to="/rts" onClick={toggleMenu} className="mobile-link">
+          RTS
+        </Link>
         <Link
           to="/sarvasamaveshak"
           onClick={toggleMenu}
           className="mobile-link"
         >
-          सर्व समावेशक शिक्षण
+          समावेशीत शिक्षण
+        </Link>
+        <Link to="/samagraanudan" className="nav-link">
+          समग्र अनुदान
         </Link>
         <Link to="/video" onClick={toggleMenu} className="mobile-link">
           व्हिडीओ

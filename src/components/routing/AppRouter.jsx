@@ -16,6 +16,10 @@ import ShishyavruttiPariksha from "../../pages/ShishyavruttiPariksha";
 import Video from "../../pages/Video";
 import Shikshakmahiti from "../../pages/Shikshakmahiti";
 import Shalamahiti from "../../pages/Shalamahiti";
+import ZPSchools from "../../pages/ZPSchools";
+import PrivateSchools from "../../pages/PrivateSchools";
+import RTS from "../../pages/RTS";
+import SamagraAnudan from "../../pages/SamagraAnudan";
 
 export default function AppRouter() {
   return (
@@ -37,6 +41,10 @@ export default function AppRouter() {
         <Route path="missionapulki" element={<Video />} />
         <Route path="shalamahiti" element={<Shalamahiti />} />
         <Route path="shikshakmahiti" element={<Shikshakmahiti />} />
+        <Route path="zp-school" element={<ZPSchools />} />
+        <Route path="private-school" element={<PrivateSchools />} />
+        <Route path="rts" element={<RTS />} />
+        <Route path="samagraanudan" element={<SamagraAnudan />} />
       </Route>
     </Routes>
   );

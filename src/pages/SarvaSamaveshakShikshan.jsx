@@ -1,7 +1,22 @@
-import React from 'react'
+import React from "react";
 
 export default function SarvaSamaveshakShikshan() {
   return (
-    <div>SarvaSamaveshakShikshan</div>
-  )
+    <div className="bg-gray-100 min-h-screen p-4">
+      <div className="bg-white p-6 rounded-lg shadow-md">
+        <ul className="list-disc pl-6 text-blue-700">
+          <li>
+            <a
+              href="https://drive.google.com/file/d/1_NXWvTQ-Qtc0n1QZSl0NgyOjI471zoK7/view?usp=drivesdk"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xl font-semibold hover:underline"
+            >
+              सर्व समावेशक शिक्षण
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  );
 }
