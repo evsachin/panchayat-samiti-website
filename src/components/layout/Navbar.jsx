@@ -49,6 +49,7 @@ function Navbar() {
     <nav className="bg-blue-600 text-white p-4 flex items-center justify-between relative z-50 shadow-md">
       <Link
         to="/"
+        onClick={toggleMenu}
         className="text-xl font-bold font-heading hover:text-yellow-300 transition-colors"
       >
         <span className="block text-lg">शिक्षण विभाग</span>
