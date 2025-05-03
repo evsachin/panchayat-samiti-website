@@ -63,7 +63,7 @@ function Navbar() {
       </button>
 
       {/* Desktop Menu */}
-      <div className="hidden md:flex gap-5 items-center">
+      <div className="hidden md:flex gap-5 items-center flex-wrap">
         <Link to="/amachyavishayi" className="nav-link">
           आमच्याविषयी
         </Link>
