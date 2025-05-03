@@ -15,7 +15,7 @@ function Amachyavishayi() {
       </div>
       <div className="bg-gray-100 min-h-screen p-2">
         <div className="bg-white md:p-6 rounded-lg shadow-md">
-          <h2 className="text-2xl font-bold mb-4 text-blue-800">
+          <h2 className="text-2xl font-bold mb-4 text-blue-800 p-4">
             शिक्षण विभाग पंचायत समिती पारनेर
           </h2>
 
