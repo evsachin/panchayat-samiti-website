@@ -21,6 +21,7 @@ import RTS from "../../pages/RTS";
 import SamagraAnudan from "../../pages/SamagraAnudan";
 import Missionapulki from "../../pages/Missionapulki";
 import Videos from "../../pages/Videos";
+import SanchManyata from "../../pages/SanchManyata";
 
 export default function AppRouter() {
   return (
@@ -46,6 +47,7 @@ export default function AppRouter() {
         <Route path="private-school" element={<PrivateSchools />} />
         <Route path="rts" element={<RTS />} />
         <Route path="samagraanudan" element={<SamagraAnudan />} />
+        <Route path="sanchmanyata" element={<SanchManyata />} />
       </Route>
     </Routes>
   );

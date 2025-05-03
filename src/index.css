@@ -65,6 +65,7 @@ body {
 
 .nav-link {
   @apply hover:text-yellow-300 transition-colors;
+  
 }
 
 .dropdown-link {

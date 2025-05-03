@@ -4,18 +4,20 @@ export default function PrivateSchools() {
   return (
     <div className="bg-gray-100 min-h-screen p-4">
       <div className="bg-white p-6 rounded-lg shadow-md">
-        <ul className="list-disc pl-6 text-blue-700">
-          <li>
-            <a
-              href="https://drive.google.com/file/d/1tMdrCt5D5rIU4FQVou4oXtKd0TrOfSrS/view"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xl font-semibold hover:underline"
-            >
-              Private Schools
-            </a>
-          </li>
-        </ul>
+        <h2 className="text-2xl font-bold mb-4 text-blue-800">
+          Private Schools
+        </h2>
+
+        <div className="w-full h-[90vh]">
+          <iframe
+            src="https://drive.google.com/file/d/18BYsuNV9k5gjIsm-KbiWLBCRfTg4UFm1/preview"
+            width="100%"
+            height="100%"
+            allow="autoplay"
+            className="rounded-lg border-2"
+            title="Private Schools PDF"
+          ></iframe>
+        </div>
       </div>
     </div>
   );

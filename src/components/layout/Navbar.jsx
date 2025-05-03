@@ -63,7 +63,7 @@ function Navbar() {
       </button>
 
       {/* Desktop Menu */}
-      <div className="hidden md:flex gap-8 items-center">
+      <div className="hidden md:flex gap-5 items-center">
         <Link to="/amachyavishayi" className="nav-link">
           आमच्याविषयी
         </Link>
@@ -189,6 +189,9 @@ function Navbar() {
         </Link>
         <Link to="/samagraanudan" className="nav-link">
           समग्र अनुदान
+        </Link>
+        <Link to="/sanchmanyata" className="nav-link">
+          संचमान्यता
         </Link>
         <Link to="/video" className="nav-link">
           व्हिडीओ
@@ -337,6 +340,9 @@ function Navbar() {
         </Link>
         <Link to="/samagraanudan" onClick={toggleMenu} className="mobile-link">
           समग्र अनुदान
+        </Link>
+        <Link to="/sanchmanyata" onClick={toggleMenu} className="mobile-link">
+          संचमान्यता
         </Link>
         <Link to="/video" onClick={toggleMenu} className="mobile-link">
           व्हिडीओ
