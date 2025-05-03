@@ -2,8 +2,8 @@ import React from "react";
 
 export default function PrivateSchools() {
   return (
-    <div className="bg-gray-100 min-h-screen p-4">
-      <div className="bg-white p-6 rounded-lg shadow-md">
+    <div className="bg-gray-100 min-h-screen p-2">
+      <div className="bg-white md:p-6 rounded-lg shadow-md">
         <h2 className="text-2xl font-bold mb-4 text-blue-800">
           Private Schools
         </h2>
