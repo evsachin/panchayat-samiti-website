@@ -72,7 +72,24 @@ export default function Videos() {
             allowFullScreen
           ></iframe>
         </div>
+        {/* Additional Video 2 */}
+        <div className="relative rounded-lg overflow-hidden shadow-lg">
+          <h2 className="text-2xl font-semibold text-blue-700 text-center">
+            शाळा पाडली आळे | अध्ययन अध्यापन साहित्य दिवस (TLM Day).
+          </h2>
+
+          <iframe
+            className="w-full aspect-video rounded-lg"
+            src="https://www.youtube.com/embed/X4Oas2NPEzE?si=yh6xjdhOH9EelhDd"
+            title="Additional Video 2"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          ></iframe>
+        </div>
       </div>
     </div>
   );
 }
+
