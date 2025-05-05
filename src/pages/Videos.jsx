@@ -7,6 +7,24 @@ export default function Videos() {
         {/* गारखिंडी शाळा */}
         <div className="space-y-4">
           <h2 className="text-2xl font-semibold text-blue-700 text-center">
+            आमच्यविषयी
+          </h2>
+          <div className="relative rounded-lg overflow-hidden shadow-lg">
+            <iframe
+           
+              className="w-full aspect-video rounded-lg"
+              src="https://www.youtube.com/embed/NT-TOBxIxAQ?si=FeCa_Ng1dMGCmjGg"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+        {/* गारखिंडी शाळा */}
+        <div className="space-y-4">
+          <h2 className="text-2xl font-semibold text-blue-700 text-center">
             गारखिंडी शाळा
           </h2>
           <div className="relative rounded-lg overflow-hidden shadow-lg">

@@ -108,11 +108,23 @@ function Navbar() {
             >
               खाजगी शाळा
             </Link>
+            <Link
+              to="/shalapath"
+              onClick={() =>
+                setDropdownOpen((prev) => ({ ...prev, shala: false }))
+              }
+              className="dropdown-link"
+            >
+              शाळा पट
+            </Link>
           </div>
         </div>
 
         <Link to="/shikshakmahiti" className="nav-link">
           शिक्षक माहिती
+        </Link>
+        <Link to="/shashannirnay" className="nav-link">
+          शाशन निर्णय
         </Link>
         <Link to="/asthapana" className="nav-link">
           आस्थापना
@@ -175,9 +187,10 @@ function Navbar() {
         <Link to="/missionapulki" className="nav-link">
           मिशन आपुलकी
         </Link>
-        <Link to="/mdm" className="nav-link">
+
+        {/* <Link to="/mdm" className="nav-link">
           MDM
-        </Link>
+        </Link> */}
         {/* New RTS Tab */}
         <Link to="/rts" className="nav-link">
           RTS
@@ -252,6 +265,17 @@ function Navbar() {
             >
               खाजगी शाळा
             </Link>
+
+            <Link
+              to="/shalapath"
+              onClick={() => {
+                toggleMenu();
+                setDropdownOpen((prev) => ({ ...prev, shala: false }));
+              }}
+              className="mobile-link"
+            >
+              शाळा पट
+            </Link>
           </div>
         </div>
 
@@ -322,9 +346,12 @@ function Navbar() {
         <Link to="/missionapulki" onClick={toggleMenu} className="mobile-link">
           मिशन आपुलकी
         </Link>
-        <Link to="/mdm" onClick={toggleMenu} className="mobile-link">
-          MDM
+        <Link to="/shashannirnay" onClick={toggleMenu} className="mobile-link">
+          शाशन निर्णय
         </Link>
+        {/* <Link to="/mdm" onClick={toggleMenu} className="mobile-link">
+          MDM
+        </Link> */}
         <Link to="/rte" onClick={toggleMenu} className="mobile-link">
           RTE प्रवेश
         </Link>

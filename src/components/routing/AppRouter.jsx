@@ -22,6 +22,8 @@ import SamagraAnudan from "../../pages/SamagraAnudan";
 import Missionapulki from "../../pages/Missionapulki";
 import Videos from "../../pages/Videos";
 import SanchManyata from "../../pages/SanchManyata";
+import ShashanNirnay from "../../pages/ShashanNirnay";
+import ShalaPath from "../../pages/ShalaPath";
 
 export default function AppRouter() {
   return (
@@ -48,6 +50,8 @@ export default function AppRouter() {
         <Route path="rts" element={<RTS />} />
         <Route path="samagraanudan" element={<SamagraAnudan />} />
         <Route path="sanchmanyata" element={<SanchManyata />} />
+        <Route path="shashannirnay" element={<ShashanNirnay />} />
+        <Route path="shalapath" element={<ShalaPath />} />
       </Route>
     </Routes>
   );
