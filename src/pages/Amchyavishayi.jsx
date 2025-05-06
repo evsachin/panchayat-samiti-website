@@ -22,7 +22,7 @@ function Amachyavishayi() {
 
           <div className="w-full h-[90vh]">
             <iframe
-              src="https://drive.google.com/file/d/1unKLplHQgwC7IGndwbz1lkmGA84ETV2I/preview"
+              src="https://drive.google.com/file/d/1KCc56RqVQlvg1drKPbkY55ocejTnqjyd/preview"
               width="100%"
               height="100%"
               allow="autoplay"
