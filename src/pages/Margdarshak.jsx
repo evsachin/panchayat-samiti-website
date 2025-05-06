@@ -6,13 +6,13 @@ import bheem from "../assets/images/bheem.png";
 export default function Margdarshak() {
   const officers = [
     {
-      name: "श्रीम. सीमा राणे",
+      name: "श्रीम सिमा राणे",
       position: "गटशिक्षणाधिकारी",
       office: "पंचायत समिती पारनेर",
       image: seema,
     },
     {
-      name: "श्री. दयानंद पवार",
+      name: "श्री दयानंद पवार",
       position: "गटविकास अधिकारी",
       office: "पंचायत समिती पारनेर",
       image: bheem,

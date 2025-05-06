@@ -11,7 +11,6 @@ export default function Videos() {
           </h2>
           <div className="relative rounded-lg overflow-hidden shadow-lg">
             <iframe
-           
               className="w-full aspect-video rounded-lg"
               src="https://www.youtube.com/embed/NT-TOBxIxAQ?si=FeCa_Ng1dMGCmjGg"
               title="YouTube video player"
@@ -80,7 +79,7 @@ export default function Videos() {
         {/* Additional Video 2 */}
         <div className="relative rounded-lg overflow-hidden shadow-lg">
           <h2 className="text-2xl font-semibold text-blue-700 text-center">
-            केंद्र जवले | शाळा पूर्व तयारी मेळावा
+            केंद्र जवळे | शाळा पूर्व तयारी मेळावा
           </h2>
 
           <iframe
