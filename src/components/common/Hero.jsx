@@ -35,16 +35,16 @@ function Hero() {
           {/* Text Content */}
           <div className="p-6 md:p-10 rounded-xl text-center md:text-left max-w-2xl backdrop-blur-sm bg-white/10 border border-white/20 shadow-2xl">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 font-heading tracking-tight leading-tight animate-fadeInUp">
-              <span className="text-yellow-300 drop-shadow-[0_2px_4px_rgba(255,255,0,0.7)]">
+              <span className="text-yellow-300 text-shadow">
                 शिक्षण विभाग
               </span>
               <br />
-              <span className="text-white relative inline-block [text-shadow:_0_2px_8px_rgba(255,255,255,0.8)]">
+              <span className="text-white relative inline-block text-shadow-2">
                 पारनेर पंचायत समिती
                 <span className="absolute left-0 bottom-0 h-1 bg-yellow-400 w-full transform scale-x-0 hover:scale-x-100 transition-transform origin-left duration-500 rounded"></span>
               </span>
             </h1>
-            <p className="text-2xl md:text-3xl text-white/90 mt-4 font-medium italic [text-shadow:_0_2px_4px_rgba(255,255,255,0.3)] animate-slideInLeft">
+            <p className="text-2xl md:text-3xl text-white/90 mt-4 font-medium [text-shadow:_0_2px_4px_rgba(255,255,255,0.3)] animate-slideInLeft">
               ता. पारनेर, जि. अहिल्यानगर
             </p>
 

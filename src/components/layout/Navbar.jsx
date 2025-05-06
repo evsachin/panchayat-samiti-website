@@ -124,7 +124,7 @@ function Navbar() {
           शिक्षक माहिती
         </Link>
         <Link to="/shashannirnay" className="nav-link">
-          शाशन निर्णय
+          शासन निर्णय
         </Link>
         <Link to="/asthapana" className="nav-link">
           आस्थापना
@@ -347,7 +347,7 @@ function Navbar() {
           मिशन आपुलकी
         </Link>
         <Link to="/shashannirnay" onClick={toggleMenu} className="mobile-link">
-          शाशन निर्णय
+          शासन निर्णय
         </Link>
         {/* <Link to="/mdm" onClick={toggleMenu} className="mobile-link">
           MDM

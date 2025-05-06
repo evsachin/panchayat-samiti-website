@@ -233,3 +233,42 @@ body {
 .hover\:glow:hover {
   animation: glow 1.5s infinite;
 }
+
+.text-shadow, .text-shadow-2 {
+  text-shadow: 
+    /* Crisp black outline for definition */
+    -1px -1px 0 #1a1a1a, 
+    1px -1px 0 #1a1a1a, 
+    -1px 1px 0 #1a1a1a, 
+    1px 1px 0 #1a1a1a,
+    /* Vibrant magenta glow */
+    0 0 6px rgba(255, 0, 128, 0.8),
+    /* Soft purple halo */
+    0 0 12px rgba(128, 0, 255, 0.6),
+    /* Diffused pink accent */
+    0 0 18px rgba(255, 102, 178, 0.4);
+  animation: gradientGlow 2.5s ease-in-out infinite;
+}
+
+@keyframes gradientGlow {
+  0%, 100% {
+    text-shadow: 
+      -1px -1px 0 #1a1a1a, 
+      1px -1px 0 #1a1a1a, 
+      -1px 1px 0 #1a1a1a, 
+      1px 1px 0 #1a1a1a,
+      0 0 6px rgba(255, 0, 128, 0.8),
+      0 0 12px rgba(128, 0, 255, 0.6),
+      0 0 18px rgba(255, 102, 178, 0.4);
+  }
+  50% {
+    text-shadow: 
+      -1px -1px 0 #1a1a1a, 
+      1px -1px 0 #1a1a1a, 
+      -1px 1px 0 #1a1a1a, 
+      1px 1px 0 #1a1a1a,
+      0 0 10px rgba(255, 0, 128, 1),
+      0 0 16px rgba(128, 0, 255, 0.8),
+      0 0 24px rgba(255, 102, 178, 0.6);
+  }
+}
