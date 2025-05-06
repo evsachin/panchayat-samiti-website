@@ -34,22 +34,28 @@ function Hero() {
 
           {/* Text Content */}
           <div className="p-6 md:p-10 rounded-xl text-center md:text-left max-w-2xl backdrop-blur-sm bg-white/10 border border-white/20 shadow-2xl">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 font-heading tracking-tight leading-tight">
-              शिक्षण विभाग <br />
-              <span className="text-yellow-300">पारनेर पंचायत समिती</span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 font-heading tracking-tight leading-tight animate-fadeInUp">
+              <span className="text-yellow-300 drop-shadow-[0_2px_4px_rgba(255,255,0,0.7)]">
+                शिक्षण विभाग
+              </span>
+              <br />
+              <span className="text-white relative inline-block [text-shadow:_0_2px_8px_rgba(255,255,255,0.8)]">
+                पारनेर पंचायत समिती
+                <span className="absolute left-0 bottom-0 h-1 bg-yellow-400 w-full transform scale-x-0 hover:scale-x-100 transition-transform origin-left duration-500 rounded"></span>
+              </span>
             </h1>
-            <p className="text-lg text-white mb-4">
+            <p className="text-2xl md:text-3xl text-white/90 mt-4 font-medium italic [text-shadow:_0_2px_4px_rgba(255,255,255,0.3)] animate-slideInLeft">
               ता. पारनेर, जि. अहिल्यानगर
             </p>
 
-            <div className="w-24 h-1.5 bg-yellow-400 mx-auto md:mx-0 mb-6 rounded-full"></div>
+            <div className="w-24 h-1.5 bg-yellow-400 mx-auto md:mx-0 mb-6 rounded-full animate-scaleIn"></div>
 
-            <p className="text-xl md:text-2xl mb-6 font-medium leading-relaxed">
+            <p className="text-xl md:text-2xl mb-6 font-medium leading-relaxed animate-fadeIn">
               शिक्षण हेच खरे धन! शालेय उपक्रम, स्पर्धा परीक्षा, आरटीई प्रवेश व
               गुणवत्तापूर्ण शिक्षणासाठी समर्पित विभाग.
             </p>
 
-            <div className="my-6 py-4 px-6 bg-white/10 border-t border-b border-white/20 rounded-lg">
+            <div className="my-6 py-4 px-6 bg-white/10 border-t border-b border-white/20 rounded-lg animate-popIn">
               <p className="text-lg text-blue-100 leading-relaxed">
                 आमचा उद्देश प्रत्येक विद्यार्थ्याला गुणवत्तापूर्ण आणि
                 सर्वसमावेशक शिक्षण पुरविणे. विविध शालेय कार्यक्रम, मिशन आरंभ व
@@ -58,13 +64,10 @@ function Hero() {
               </p>
             </div>
 
-            <div className="mt-6 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-              <button className="bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 hover:scale-105">
-                अधिक माहिती मिळवा
-              </button>
+            <div className="mt-6 flex flex-col sm:flex-row gap-4 justify-center md:justify-start animate-button">
               <a
                 href="#contact"
-                className="bg-transparent hover:bg-white/10 text-white font-semibold py-3 px-8 rounded-full border-2 border-white transition duration-300 hover:scale-105"
+                className="bg-transparent hover:bg-white/10 text-white font-semibold py-3 px-8 rounded-full border-2 border-white transition duration-300 hover:scale-105 hover:glow"
               >
                 संपर्क साधा
               </a>

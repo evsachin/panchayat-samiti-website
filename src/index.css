@@ -1,25 +1,36 @@
 @import "tailwindcss";
 
-html{
+html {
   scroll-behavior: smooth;
-  
 }
 body {
-  font-family: 'Tiro Devanagari Marathi', serif;
+  font-family: "Tiro Devanagari Marathi", serif;
   letter-spacing: 1px;
   font-weight: 700;
 }
 
 @keyframes gradient-shift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 @keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
-  100% { transform: translateY(0px); }
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 .animate-gradient-shift {
@@ -40,15 +51,30 @@ body {
 }
 
 @keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-15px); }
-  100% { transform: translateY(0px); }
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 @keyframes pulse-slow {
-  0% { transform: scale(1); opacity: 0.8; }
-  50% { transform: scale(1.05); opacity: 1; }
-  100% { transform: scale(1); opacity: 0.8; }
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
 }
 
 .animate-float {
@@ -69,7 +95,6 @@ body {
 
 .nav-link {
   @apply hover:text-yellow-300 transition-colors;
-  
 }
 
 .dropdown-link {
@@ -79,7 +104,6 @@ body {
 .mobile-link {
   @apply hover:text-yellow-300 transition-colors p-2 hover:bg-blue-600 rounded;
 }
-
 
 @layer utilities {
   .animate-fade-in {
@@ -93,18 +117,34 @@ body {
   }
 
   @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 
   @keyframes slideInLeft {
-    from { opacity: 0; transform: translateX(-20px); }
-    to { opacity: 1; transform: translateX(0); }
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
 
   @keyframes slideInRight {
-    from { opacity: 0; transform: translateX(20px); }
-    to { opacity: 1; transform: translateX(0); }
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
 }
 
@@ -117,4 +157,79 @@ body {
 /* Remove blur after load */
 .lazy-image.loaded {
   filter: blur(0);
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes scaleIn {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  70% {
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+  }
+}
+.animate-fadeInUp {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+.animate-slideInLeft {
+  animation: slideInLeft 0.8s ease-out 0.2s forwards;
+}
+.animate-scaleIn {
+  animation: scaleIn 0.6s ease-out 0.4s forwards;
+  transform-origin: center;
+}
+.animate-fadeIn {
+  animation: fadeInUp 0.8s ease-out 0.6s forwards;
+}
+.animate-popIn {
+  animation: popIn 0.8s ease-out 0.8s forwards;
+}
+.animate-button {
+  animation: fadeInUp 0.8s ease-out 1s forwards;
+}
+.hover\:glow:hover {
+  animation: glow 1.5s infinite;
 }
