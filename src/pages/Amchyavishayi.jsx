@@ -13,7 +13,7 @@ function Amachyavishayi() {
           हा आमचा उद्देश आहे.
         </p>
       </div>
-      
+    
 
       <div className="bg-gray-100 min-h-screen p-4">
         <div className="bg-white p-6 rounded-lg shadow-md">
@@ -25,7 +25,7 @@ function Amachyavishayi() {
                 rel="noopener noreferrer"
                 className="text-xl font-semibold hover:underline"
               >
-                नवोदय विद्यालय प्रवेश परीक्षा यादी
+                शिक्षण विभाग पंचायत समिती पारनेर
               </a>
             </li>
           </ul>
