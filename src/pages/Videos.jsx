@@ -4,7 +4,6 @@ export default function Videos() {
   return (
     <div className="bg-gray-100 min-h-screen p-4">
       <div className="bg-white p-3 lg:p-6 rounded-lg shadow-md space-y-8 max-w-4xl mx-auto">
-        {/* गारखिंडी शाळा */}
         <div className="space-y-4">
           <h2 className="text-2xl font-semibold text-blue-700 text-center">
             आमच्याविषयी
@@ -12,15 +11,16 @@ export default function Videos() {
           <div className="relative rounded-lg overflow-hidden shadow-lg">
             <iframe
               className="w-full aspect-video rounded-lg"
-              src="https://www.youtube.com/embed/NT-TOBxIxAQ?si=FeCa_Ng1dMGCmjGg"
+              src="https://www.youtube.com/embed/NT-TOBxIxAQ?si=_sM0oDJcCmH-VjgH"
               title="YouTube video player"
-              frameborder="0"
+              frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
             ></iframe>
           </div>
         </div>
+
         {/* गारखिंडी शाळा */}
         <div className="space-y-4">
           <h2 className="text-2xl font-semibold text-blue-700 text-center">
