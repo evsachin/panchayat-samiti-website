@@ -57,6 +57,23 @@ export default function Videos() {
             ></iframe>
           </div>
         </div>
+        <div className="space-y-4">
+          <h2 className="text-2xl font-semibold text-blue-700 text-center">
+            शाळा काळकूप । आकाश कंदील कार्यशाळा
+          </h2>
+          <div className="relative rounded-lg overflow-hidden shadow-lg">
+            <iframe
+              className="w-full aspect-video rounded-lg"
+              src="https://www.youtube.com/embed/06zO_hfma34?si=UHeSM4cxrfcovmol"
+              title="शाळा सोनगिरेवाडी"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
 
         {/* पानोली शाळा */}
         <div className="space-y-4">
