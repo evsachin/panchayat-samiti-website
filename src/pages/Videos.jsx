@@ -3,11 +3,11 @@ import React from "react";
 export default function Videos() {
   return (
     <div className="bg-gray-100 min-h-screen p-4">
-      <div className="bg-white p-6 rounded-lg shadow-md space-y-8 max-w-4xl mx-auto">
+      <div className="bg-white p-3 lg:p-6 rounded-lg shadow-md space-y-8 max-w-4xl mx-auto">
         {/* गारखिंडी शाळा */}
         <div className="space-y-4">
           <h2 className="text-2xl font-semibold text-blue-700 text-center">
-            आमच्यविषयी
+            आमच्याविषयी
           </h2>
           <div className="relative rounded-lg overflow-hidden shadow-lg">
             <iframe
@@ -40,6 +40,24 @@ export default function Videos() {
           </div>
         </div>
 
+        <div className="space-y-4">
+          <h2 className="text-2xl font-semibold text-blue-700 text-center">
+            शाळा धोत्रे खुर्द
+          </h2>
+          <div className="relative rounded-lg overflow-hidden shadow-lg">
+            <iframe
+              className="w-full aspect-video rounded-lg"
+              src="https://www.youtube.com/embed/EbYLNkEbH4o"
+              title="गारखिंडी शाळा"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+
         {/* पानोली शाळा */}
         <div className="space-y-4">
           <h2 className="text-2xl font-semibold text-blue-700 text-center">
@@ -59,10 +77,28 @@ export default function Videos() {
           </div>
         </div>
 
+        <div className="space-y-4">
+          <h2 className="text-2xl font-semibold text-blue-700 text-center">
+            शाळा धोत्रे खुर्द | मोडी लिपी लेखन
+          </h2>
+          <div className="relative rounded-lg overflow-hidden shadow-lg">
+            <iframe
+              className="w-full aspect-video rounded-lg"
+              src="https://www.youtube.com/embed/DqetFWaV-x4?si=nGKFpWWTw0ano5wh"
+              title="शाळा गारखिंडी"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+
         {/* Additional Video 1 */}
         <div className="relative rounded-lg overflow-hidden shadow-lg">
           <h2 className="text-2xl font-semibold text-blue-700 text-center">
-            शाळा पाडली आळे | वनभोजन
+            शाळा पाडळी आळे | वनभोजन
           </h2>
           <iframe
             className="w-full aspect-video rounded-lg"
@@ -75,7 +111,6 @@ export default function Videos() {
             loading="lazy"
           ></iframe>
         </div>
-
         {/* Additional Video 2 */}
         <div className="relative rounded-lg overflow-hidden shadow-lg">
           <h2 className="text-2xl font-semibold text-blue-700 text-center">
@@ -96,7 +131,7 @@ export default function Videos() {
         {/* Additional Video 2 */}
         <div className="relative rounded-lg overflow-hidden shadow-lg">
           <h2 className="text-2xl font-semibold text-blue-700 text-center">
-            शाळा पाडली आळे | अध्ययन अध्यापन साहित्य दिवस (TLM Day).
+            शाळा पाडळी आळे | अध्ययन अध्यापन साहित्य दिवस (TLM Day).
           </h2>
 
           <iframe
