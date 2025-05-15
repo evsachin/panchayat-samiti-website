@@ -3,9 +3,11 @@ import upakram from "../assets/images/upakram.jpeg";
 import upakram1 from "../assets/images/upakram1.jpeg";
 import upakram2 from "../assets/images/upakram2.jpeg";
 import upakram3 from "../assets/images/upakram3.jpeg";
+import upakram4 from "../assets/images/upakram4.jpeg";
+import upakram5 from "../assets/images/upakram5.jpeg";
 
 export default function Upakram() {
-  const images = [upakram, upakram3,upakram1, upakram2];
+  const images = [upakram4, upakram5, upakram, upakram3, upakram1, upakram2];
   const [loaded, setLoaded] = useState(false);
 
 
